@@ -1,7 +1,7 @@
 import { Task as TaskType } from "@/types/task"
-import { Card, CardHeader, CardTitle } from "./ui/card"
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "./ui/card"
 import { Button } from "./ui/button"
-import { Clipboard } from "lucide-react"
+import { Check, Clipboard, Coins, Trash } from "lucide-react"
 
 type TaskProps = {
     task: TaskType
@@ -10,15 +10,25 @@ type TaskProps = {
 const Task = ({ task }: TaskProps) => {
     return (
         <li>
-            <Card className="task">
-                <CardHeader className="">
-                    <CardTitle className="flex"><Clipboard className="" /> {task.title}</CardTitle>
-                    <span>{task.description}</span>
+            <Card>
+                <CardHeader className="flex flex-row items-center gap-2">
+                    <Clipboard />
+                    <CardTitle>{task.title}</CardTitle>
                 </CardHeader>
-                <div className="">
-                    <Button>Finalizar tarefa</Button>
-                    <Button>Delete</Button>
-                </div>
+
+                <CardContent>
+                    <span>{task.description.slice(0, 80)}</span>
+                </CardContent>
+
+                <CardFooter className="w-full justify-between gap-1">
+                    <div>
+                        <Button variant={"outline"}><Coins/>{task.points}</Button>
+                    </div>
+                    <div>
+                        <Button><Check/> Finalizar tarefa</Button>
+                        <Button variant={"ghost"}><Trash/>Apagar</Button>
+                    </div>
+                </CardFooter>
             </Card>
         </li>
     )

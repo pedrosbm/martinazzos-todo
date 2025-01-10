@@ -3,7 +3,7 @@ type Task = {
     userId: number;
     title: string;
     description: string;
-    status: "pending" | "in-progress" | "completed";
+    status: "pending" | "completed";
     points: number;
     completedAt?: Date;
 }
