@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { Task as TaskType } from "../types/task";
 import { Separator } from "@/components/ui/separator";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import { Filter, Plus } from "lucide-react";
 import { Skeleton } from "@/components/ui/skeleton";
 
