@@ -24,7 +24,7 @@ const Task = ({ task }: TaskProps) => {
                     <div>
                         <Button variant={"outline"}><Coins/>{task.points}</Button>
                     </div>
-                    <div>
+                    <div className="flex flex-row justify-end gap-1">
                         <Button><Check/> Finalizar tarefa</Button>
                         <Button variant={"ghost"}><Trash/>Apagar</Button>
                     </div>

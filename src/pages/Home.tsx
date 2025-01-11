@@ -7,6 +7,8 @@ import { Filter, Plus } from "lucide-react";
 import { Skeleton } from "@/components/ui/skeleton";
 
 import Task from "@/components/Task";
+import NewTask from "@/components/NewTask";
+import ModalTrigger from "@/components/ModalTrigger";
 
 const apiUrl = import.meta.env.VITE_API_URL as string
 
@@ -35,8 +37,13 @@ const Home = () => {
 
                     {/* TODO opções de filtro */}
                     <div className="flex mb-5 gap-3">
-                        <Button><Plus /></Button>
-                        <Button variant={"secondary"}><Filter /></Button>
+                        <ModalTrigger icon={<Plus />} variant={"default"}>
+                            <NewTask />
+                        </ModalTrigger>
+                        
+                        <ModalTrigger icon={<Filter />} variant={"secondary"}>
+                            <div>Filter</div>
+                        </ModalTrigger>
                     </div>
 
                     {/* Lista de tasks */}
